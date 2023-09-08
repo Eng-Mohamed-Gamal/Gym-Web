@@ -43,14 +43,14 @@ a {
   padding: 10px 20px;
   margin: 10px 0px;
   border-radius: 10px;
-  background-color: #000;
-  color: #f7f1ea;
+  background-color: #ffe6bc;
+  color: #000;
   -webkit-transition: linear 0.4s;
   transition: linear 0.4s;
 }
 .nav .container a h1:hover {
-  background-color: #ffe6bc;
-  color: #000;
+  background-color: #000;
+  color: #ffe6bc;
 }
 
 @media (max-width: 450px) {
@@ -86,8 +86,6 @@ a {
   border-radius: 20px;
 }
 .stage-1 .con a {
-  background-color: #000;
-  color: #f7f1ea;
   padding: 20px;
   display: block;
   width: 250px;
@@ -95,16 +93,79 @@ a {
   margin-top: 10px;
   border-radius: 10px;
   font-weight: bold;
+  background-color: #ffe6bc;
+  color: #000;
   -webkit-transition: linear 0.4s;
   transition: linear 0.4s;
 }
 .stage-1 .con a:hover {
-  background-color: #ffe6bc;
-  color: #000;
+  background-color: #000;
+  color: #ffe6bc;
 }
 
 @media (max-width: 950px) {
   .home .stage-1 {
     background-position: center;
   }
+}
+.stage-2 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.stage-2 .container h2 {
+  text-align: center;
+  width: 270px;
+  padding: 10px 0px;
+  border-radius: 20px;
+  background-color: #ffe6bc;
+  color: #000;
+  -webkit-transition: linear 0.4s;
+  transition: linear 0.4s;
+}
+.stage-2 .container h2:hover {
+  background-color: #000;
+  color: #ffe6bc;
+}
+.stage-2 .container .flex {
+  margin: 15px 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.stage-2 .container .flex input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 85%;
+          flex: 1 1 85%;
+  border: 2px solid #ddd;
+  height: 50px;
+}
+.stage-2 .container .flex button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15%;
+          flex: 1 1 15%;
+  background-color: #ffe6bc;
+  border: none;
+  border: inset;
+  border-radius: 3px;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: linear 0.4s;
+  transition: linear 0.4s;
+  transition: linear 0.4s;
+}
+.stage-2 .container .flex button:hover {
+  background-color: #000;
+  color: #ffe6bc;
 }
