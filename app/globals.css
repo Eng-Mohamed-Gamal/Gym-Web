@@ -1,0 +1,110 @@
+* {
+  text-transform: capitalize;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  height: 2000px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  background-color: #ffe6bc;
+  position: sticky;
+  top: 0;
+}
+.nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nav .container a h1 {
+  padding: 10px 20px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #f7f1ea;
+  -webkit-transition: linear 0.4s;
+  transition: linear 0.4s;
+}
+.nav .container a h1:hover {
+  background-color: #ffe6bc;
+  color: #000;
+}
+
+@media (max-width: 450px) {
+  .nav .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 10px;
+    gap: 10px;
+  }
+}
+.stage-1 {
+  height: 60vh;
+  background: url("../public/assets/images/home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stage-1 .con {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #f7f1ea;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+}
+.stage-1 .con a {
+  background-color: #000;
+  color: #f7f1ea;
+  padding: 20px;
+  display: block;
+  width: 250px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  -webkit-transition: linear 0.4s;
+  transition: linear 0.4s;
+}
+.stage-1 .con a:hover {
+  background-color: #ffe6bc;
+  color: #000;
+}
+
+@media (max-width: 950px) {
+  .home .stage-1 {
+    background-position: center;
+  }
+}
