@@ -66,6 +66,7 @@ export default function BodyPart({arr}) {
       <div className="container">
       <Slider {...settings}>
         { arr && arr.map((part , index)=>{
+          
             return (
                 <div className="part" key={index}>
                 <img src="assets/icons/gym.png" alt="" />

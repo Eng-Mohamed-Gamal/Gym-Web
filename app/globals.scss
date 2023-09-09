@@ -8,12 +8,24 @@ $text-Color: #f7f1ea;
   box-sizing: border-box;
 }
 
+
 @mixin Hover {
   transition: $tra;
   &:hover {
     background-color: $back-2;
     color: $back-1;
   }
+}
+
+.cen{
+  width: 200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: $back-1;
+  color: $back-2;
+  @include Hover()
 }
 
 body {
@@ -232,24 +244,27 @@ a {
             border-radius: 10px;
             background-color: $back-1;
             text-align: center;
+            border: 2px solid $back-2;
             img{
-                max-width: 100%;
+                width: 100%;
                 border-radius: 10px;
             }
             .flex{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
                 gap: 10px;
-                h3{
+                p{
                     background-color: $text-Color;
                     padding: 10px;
                     border-radius: 10px;
                     font-weight: bold;
+                    margin: 0%;
                 }
             }
             h1{
-                margin-top: 0%;
+                margin-top: 10px;
             }
         }
     }
@@ -259,22 +274,15 @@ a {
     .showen{
          & > .container{
             grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
+  
             .box{
-                .flex{
-                    flex-direction: column;
-                    h3:first-child{
-                        margin: 10px 0px 0px 0px ;
-                    }
-                    h3{
-                        margin: 0%;
-                    }
-                }
-                h1{
-                    margin-top: 10px;
-                }
+              h1{
+                font-size: 22px;
+              }
             }
          }}
 }
+
 
 
 // Showen
@@ -282,59 +290,29 @@ a {
 // Paginate
 
 .paginate{
-    padding-bottom: 50px;
-    width: 400px;
     margin: auto;
     position: relative;
-    .slick-slide{
-        &>div{
-            margin: 0px 10px;
-        }
-        
+    .container{
+      display: grid;
+      grid-template-columns: repeat(auto-fill , minmax(40px , 1fr));
+      gap: 10px;
+      p{
+        background-color: $back-1;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $back-2;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    }
+    }
 
-            p{
-                background-color: $back-2;
-                width: 40px !important;
-                height: 40px;
-                display: flex !important;
-                justify-content: center;
-                align-items: center;
-                color: $text-Color;
-                cursor: pointer;
-                border-radius: 50%;
-            }
-        
-    }
-    .prev {
-        background-color: $back-1;
-        width: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        z-index: 100;
-        transform: translateX(-110%);
-    }
-    .next{
-        background-color: $back-1;
-        width: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        z-index: 100;
-        transform: translateX(15%);
-    }
-}
+
 
 @media(max-width : 420px) {
-    .paginate{
-        width: 250px;
-    }
+
 }
 
 // Paginate

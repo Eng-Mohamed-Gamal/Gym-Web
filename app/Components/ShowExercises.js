@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from 'react'
 
 
@@ -48,9 +48,15 @@ const settings = {
   ]
 };
 
+
+
 export default function ShowExercises({main}) {
+
+  // HANDLE PAHINATE SYSYTEM
     const excercisesLimit  = 9 ;
     const [paginate , setpaginate] = useState(1 * excercisesLimit)
+    const [start , setStart] = useState(0)
+    const [end , setEnd] = useState(5)
     const paginateHandler = (value) => {setpaginate(value * excercisesLimit)}
     let numOfPaginate ;
     if(main){
@@ -58,7 +64,9 @@ export default function ShowExercises({main}) {
     }
 
 
-// HANDLE SEARCH OPERATOIN
+  // HANDLE PAHINATE SYSYTEM
+
+
   return (
     <div className="showen">
 
@@ -67,10 +75,11 @@ export default function ShowExercises({main}) {
 
     return (
       <div className="box" key={item.id}>
-        <img src="assets/images/basic.jpg"  loading="lazy" />
+        <img src={item.gifUrl}  loading="lazy" />
         <div className="flex">
-          <h3> body part : {item.bodyPart}</h3>
-          <h3> target muscle : {item.target}</h3>
+          <p> body part : {item.bodyPart}</p>
+          <p> target muscle : {item.target}</p>
+          <p>equipment : {item.equipment}</p>
         </div>
         <h1>{item.name}</h1>
       </div>
@@ -79,13 +88,13 @@ export default function ShowExercises({main}) {
 
     </div>
     <div className="paginate">
-        <div className="container">
-        <Slider {...settings}>
+      <h1 className="cen">pages</h1>
+        <div className="container" >
         {[...Array(numOfPaginate)].map((box , index)=>{
       return <p onClick={()=> paginateHandler(index+1)} key={index} type='button'  >{index +1}</p>
         })}
-        </Slider>
         </div>
+
   </div>
   </div>
   )

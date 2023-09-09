@@ -29,11 +29,11 @@ const [bodypart , setBodyPart ] = useState()
     normalFetch();
     bodypartFetch();
  },[])
- console.log(bodypart)
+
 // FETCH ALL EXCERCISES BY DEFAULT 
   return (
  <div className="all">
-    <Search setMain={setMain}  ></Search>
+    <Search setMain={setMain} main={main}  ></Search>
     <BodyPart arr={bodypart}></BodyPart>
     <ShowExercises main={main} ></ShowExercises>
  </div>
