@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import React from 'react'
-
+import { fetchData , options } from "../FetchCostum";
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -59,16 +59,20 @@ const settings = {
   ]
 };
 
-export default function BodyPart({arr}) {
+export default function BodyPart({arr , setMain}) {
+
+  const fetchByCategory = async (bodyPart) =>{
+    const EXCERCISES = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,options);
+    setMain(EXCERCISES)
+  }
    
   return (
     <div className="stage-3">
       <div className="container">
       <Slider {...settings}>
-        { arr && arr.map((part , index)=>{
-          
+        { arr && arr.map((part , index)=>{        
             return (
-                <div className="part" key={index}>
+                <div className="part" key={index} onClick={()=>fetchByCategory(part)}>
                 <img src="assets/icons/gym.png" alt="" />
                 <h2>{part}</h2>
               </div>

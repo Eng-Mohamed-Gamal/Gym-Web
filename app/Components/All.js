@@ -2,7 +2,7 @@
 
 
 
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Search from './Search'
 import BodyPart from './BodyPart'
 import ShowExercises from './ShowExercises'
@@ -17,25 +17,29 @@ const [bodypart , setBodyPart ] = useState()
 // FETCH ALL EXCERCISES BY DEFAULT 
  useEffect(()=>{
     const normalFetch = async ()=>{
-        const EXCERCISES = await fetchData('https://exercisedb.p.rapidapi.com/exercises' , options)
-        setMain(EXCERCISES)
+    const EXCERCISES = await fetchData('https://exercisedb.p.rapidapi.com/exercises' , options)
+    setMain(EXCERCISES)
     }
+// FETCH ALL EXCERCISES BY DEFAULT 
+
+// GET ALL BODY PARTS
     const bodypartFetch = async ()=>{
-    // GET ALL BODY PARTS
-   const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList' , options)
-   setBodyPart(["all" , ...data])
-   // GET ALL BODY PARTS
+    const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList' , options)
+    setBodyPart(["all" , ...data])
     }
+    // GET ALL BODY PARTS
     normalFetch();
     bodypartFetch();
  },[])
 
-// FETCH ALL EXCERCISES BY DEFAULT 
+
   return (
  <div className="all">
-    <Search setMain={setMain} main={main}  ></Search>
-    <BodyPart arr={bodypart}></BodyPart>
+
+   <Search setMain={setMain} main={main}  ></Search>
+    <BodyPart arr={bodypart} setMain={setMain}  ></BodyPart>
     <ShowExercises main={main} ></ShowExercises>
+
  </div>
   )
 }

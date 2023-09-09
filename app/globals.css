@@ -277,6 +277,7 @@ a {
   background-color: #ffe6bc;
   text-align: center;
   border: 2px solid #000;
+  cursor: pointer;
 }
 .showen > .container .box img {
   width: 100%;
@@ -322,14 +323,23 @@ a {
   position: relative;
 }
 .paginate .container {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 10px;
 }
 .paginate .container p {
   background-color: #ffe6bc;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,4 +352,5 @@ a {
   color: #000;
   cursor: pointer;
   border-radius: 50%;
+  font-weight: bold;
 }

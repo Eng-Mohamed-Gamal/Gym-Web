@@ -55,15 +55,11 @@ export default function ShowExercises({main}) {
   // HANDLE PAHINATE SYSYTEM
     const excercisesLimit  = 9 ;
     const [paginate , setpaginate] = useState(1 * excercisesLimit)
-    const [start , setStart] = useState(0)
-    const [end , setEnd] = useState(5)
     const paginateHandler = (value) => {setpaginate(value * excercisesLimit)}
     let numOfPaginate ;
     if(main){
          numOfPaginate = Math.ceil(main.length / 9)
     }
-
-
   // HANDLE PAHINATE SYSYTEM
 
 
@@ -71,8 +67,7 @@ export default function ShowExercises({main}) {
     <div className="showen">
 
     <div className="container">
-    { main && main.slice(paginate - 9 ,paginate).map(item =>{
-
+    {main.slice(paginate - 9 ,paginate).map(item =>{
     return (
       <div className="box" key={item.id}>
         <img src={item.gifUrl}  loading="lazy" />

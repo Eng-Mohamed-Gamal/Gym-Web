@@ -245,6 +245,7 @@ a {
             background-color: $back-1;
             text-align: center;
             border: 2px solid $back-2;
+            cursor: pointer;
             img{
                 width: 100%;
                 border-radius: 10px;
@@ -293,18 +294,22 @@ a {
     margin: auto;
     position: relative;
     .container{
-      display: grid;
-      grid-template-columns: repeat(auto-fill , minmax(40px , 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       gap: 10px;
       p{
         background-color: $back-1;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         display: flex;
         justify-content: center;
         align-items: center;
         color: $back-2;
         cursor: pointer;
         border-radius: 50%;
+        font-weight: bold;
     }
     }
     }
