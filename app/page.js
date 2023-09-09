@@ -2,7 +2,9 @@
 
 
 import { fetchData , options } from "./FetchCostum"
-import BodyPart from "./Components/BodyPart";
+import All from "./Components/All";
+
+
 
 export const metadata = {
   title: 'Glods Gym',
@@ -14,9 +16,21 @@ export const metadata = {
 
 
 export default async function Home() {
-  const arr = []
-   const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList' , options)
-   arr.push("all" , ...data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   return (
@@ -29,16 +43,7 @@ export default async function Home() {
           <a href="#Exercises">explore exercises</a>
         </div>
         </div>
-        <div className="stage-2">
-          <div className="container">
-            <h2>awesome exercises you should know</h2>
-            <div className="flex">
-              <input type="text" placeholder="search exercises" />
-              <button>search</button>
-            </div>
-          </div>
-        </div>
-        <BodyPart arr={arr}/>
+        <All ></All>
     </div>
   )
 }

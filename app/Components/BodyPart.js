@@ -6,20 +6,66 @@ import "slick-carousel/slick/slick-theme.css";
 
 import React from 'react'
 
+
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="next" onClick={onClick} style={{
+      cursor : "pointer"
+    }}>
+      <img src="assets/icons/right-arrow.png" alt="" />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="prev"onClick={onClick} style={{
+      cursor : "pointer"
+    }}>
+        <img src="assets/icons/left-arrow.png" alt="" />
+    </div>
+  );
+  }
+
 const settings = {
   dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 4
+  slidesToScroll: 1,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
 };
 
 export default function BodyPart({arr}) {
-    console.log(arr)
+   
   return (
     <div className="stage-3">
+      <div className="container">
       <Slider {...settings}>
-        {arr.map((part , index)=>{
+        { arr && arr.map((part , index)=>{
             return (
                 <div className="part" key={index}>
                 <img src="assets/icons/gym.png" alt="" />
@@ -28,6 +74,7 @@ export default function BodyPart({arr}) {
             )
         })}
         </Slider>
+      </div>
   </div>
   )
 }
