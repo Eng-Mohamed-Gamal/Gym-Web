@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { useEffect, useRef, useState } from "react";
 import React from 'react'
+import Link from "next/link";
 
 
 function SampleNextArrow(props) {
@@ -66,7 +67,7 @@ export default function ShowExercises({main}) {
 
 
   return (
-    <div className="showen">
+    <div className="showen" id="Exercises">
 
     <div className="container">
     { main && main.slice(paginate - 9 ,paginate).map(item =>{
@@ -80,6 +81,7 @@ export default function ShowExercises({main}) {
           <p>equipment : {item.equipment}</p>
         </div>
         <h1>{item.name}</h1>
+        <Link href={`/${item.id}`}>explore</Link>
       </div>
     )
   })}

@@ -7,6 +7,7 @@ import Search from './Search'
 import BodyPart from './BodyPart'
 import ShowExercises from './ShowExercises'
 import { fetchData , options } from "../FetchCostum";
+import StageMain from './StageMain'
 
 
 export default  function  All() {
@@ -38,7 +39,7 @@ const [bodypart , setBodyPart ] = useState()
 
   return (
  <div className="all">
-
+  <StageMain></StageMain>
    <Search setMain={setMain} main={main}  ></Search>
     <BodyPart arr={bodypart} setMain={setMain}  ></BodyPart>
     <ShowExercises main={main} ></ShowExercises>

@@ -7,6 +7,9 @@ $text-Color: #f7f1ea;
   text-transform: capitalize;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 
 @mixin Hover {
@@ -266,6 +269,16 @@ a {
             }
             h1{
                 margin-top: 10px;
+            }
+            a{
+              background-color: $text-Color;
+              padding: 10px 15px;
+              display: block;
+              margin: 10px auto;
+              width: 150px;
+              border-radius: 10px;
+              color: $back-2;
+              font-weight: bold;
             }
         }
     }
