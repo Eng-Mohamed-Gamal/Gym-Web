@@ -1,13 +1,13 @@
 
 
 
-export const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '590b2655c6mshe2ca84ff4297057p1f4084jsne2b087af8e86',
-      'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-    }
-  };
+ export const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '2d85418ee2msh3a823ebbc53f85ap189168jsna22ddb9a814f',
+    'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+  }
+};
 
 
 

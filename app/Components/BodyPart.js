@@ -62,8 +62,14 @@ const settings = {
 export default function BodyPart({arr , setMain}) {
 
   const fetchByCategory = async (bodyPart) =>{
-    const EXCERCISES = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,options);
-    setMain(EXCERCISES)
+
+    if(bodyPart === "all"){
+      const EXCERCISES = await fetchData(`https://exercisedb.p.rapidapi.com/exercises`,options);
+      setMain(EXCERCISES)
+    }else{
+      const EXCERCISES = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,options);
+      setMain(EXCERCISES)
+    }
   }
    
   return (
@@ -72,7 +78,7 @@ export default function BodyPart({arr , setMain}) {
       <Slider {...settings}>
         { arr && arr.map((part , index)=>{        
             return (
-                <div className="part" key={index} onClick={()=>fetchByCategory(part)}>
+                <div className="part" key={index} onClick={()=>fetchByCategory(part.toLowerCase())}>
                 <img src="assets/icons/gym.png" alt="" />
                 <h2>{part}</h2>
               </div>

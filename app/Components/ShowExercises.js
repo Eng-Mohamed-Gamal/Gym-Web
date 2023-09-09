@@ -60,6 +60,8 @@ export default function ShowExercises({main}) {
     if(main){
          numOfPaginate = Math.ceil(main.length / 9)
     }
+
+
   // HANDLE PAHINATE SYSYTEM
 
 
@@ -67,7 +69,8 @@ export default function ShowExercises({main}) {
     <div className="showen">
 
     <div className="container">
-    {main.slice(paginate - 9 ,paginate).map(item =>{
+    { main && main.slice(paginate - 9 ,paginate).map(item =>{
+
     return (
       <div className="box" key={item.id}>
         <img src={item.gifUrl}  loading="lazy" />

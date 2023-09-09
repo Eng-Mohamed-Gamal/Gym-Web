@@ -10,6 +10,8 @@ import { fetchData , options } from "../FetchCostum";
 
 
 export default  function  All() {
+
+
 const [main , setMain] = useState()
 const [bodypart , setBodyPart ] = useState()
 
@@ -20,6 +22,7 @@ const [bodypart , setBodyPart ] = useState()
     const EXCERCISES = await fetchData('https://exercisedb.p.rapidapi.com/exercises' , options)
     setMain(EXCERCISES)
     }
+    
 // FETCH ALL EXCERCISES BY DEFAULT 
 
 // GET ALL BODY PARTS
@@ -27,7 +30,7 @@ const [bodypart , setBodyPart ] = useState()
     const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList' , options)
     setBodyPart(["all" , ...data])
     }
-    // GET ALL BODY PARTS
+// GET ALL BODY PARTS
     normalFetch();
     bodypartFetch();
  },[])
