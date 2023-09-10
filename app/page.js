@@ -1,7 +1,5 @@
 
 
-
-import { fetchData , options } from "./FetchCostum"
 import All from "./Components/All";
 
 
