@@ -21,9 +21,9 @@ html{
 }
 
 .cen{
-  width: 200px;
+  width: 240px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 5px 20px;
   border-radius: 20px;
   text-align: center;
   background-color: $back-1;
@@ -34,7 +34,6 @@ html{
 body {
   margin: 0%;
   padding: 0%;
-  height: 2000px;
 }
 
 .container {
@@ -334,3 +333,161 @@ a {
 }
 
 // Paginate
+
+// Single
+
+.single{
+  padding-bottom: 50px;
+  min-height: 100vh;
+  background-color: #ddd;
+  .container{
+    .all{
+      padding-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      .img{
+        flex:  1 1 400px;
+        img{
+          width: 100%;
+          border-radius: 20px;
+        }
+      }
+      .con{
+        flex:  1 1 400px;
+        &>h1{
+          margin-top: 0;
+        }
+        .cen{
+          margin: 0% auto;
+        }
+        .flex{
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          margin-bottom: 10px;
+          .img2{
+            width: 90px ;
+            height: 90px;
+            background-color: $back-1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Single
+
+
+// Videos
+
+.videos{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+  gap: 20px;
+  a{
+    border: 2px solid $back-2;
+    text-align: center;
+    img{
+      width: 100%;
+    }
+    h1,h3{
+      color: $back-2;
+    }
+  }
+}
+
+
+@media(max-width : 420px) {
+  .videos{
+          grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
+       }
+}
+
+// Videos
+
+// SimilarTARGET
+
+.similar{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+  gap: 20px;
+  .sim{
+    border: 2px solid $back-2;
+    text-align: center;
+    background-color: $back-1;
+    img{
+      width: 100%;
+    }
+    h1{
+      color: $back-2;
+    }
+    a{
+      background-color: $text-Color;
+      padding: 10px 15px;
+      display: block;
+      margin: 10px auto;
+      width: 150px;
+      border-radius: 10px;
+      color: $back-2;
+      font-weight: bold;
+    }
+  }
+}
+
+@media(max-width : 420px) {
+  .similar{
+          grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
+       }
+}
+
+// SimilarTARGET
+
+
+
+// Loading
+
+.loading{
+  .img{
+    height: 68vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 250px ;
+      height: 250px;
+    }
+  }
+}
+
+// Loading
+
+
+
+
+
+
+
+
+
+
+
+
+// Footer
+.footer{
+  background-color: $back-1;
+  height: 77px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2{
+    margin: 0;
+    text-align: center;
+  }
+}
+// Footer
